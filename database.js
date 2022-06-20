@@ -10,7 +10,9 @@
  )
 
  client.connect();
- client.query(`SELECT * FROM ACTOR_PICTURE WHERE ACTOR_ID = 18`, (err, res) => {
+ client.query(`SELECT * FROM MOVIE_CAST WHERE MOVIE_ID = 
+ (SELECT MOVIE_ID FROM MOVIE WHERE MOVIE_NAME = 
+    'DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS')`, (err, res) => {
     if(!err){
         console.log(res.rows);
     }

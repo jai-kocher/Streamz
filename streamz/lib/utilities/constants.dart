@@ -14,3 +14,8 @@ TextStyle textStyle2 = TextStyle(
   fontWeight: FontWeight.bold,
   color: appTextRedColor
 );
+
+TextStyle textStyle3 = TextStyle(
+  fontSize: 17.5,
+  fontFamily: 'Roboto',
+);

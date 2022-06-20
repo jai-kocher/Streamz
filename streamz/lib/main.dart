@@ -2,12 +2,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:streamz/screens/login_page.dart';
-import 'screens/login_page.dart';
-import 'screens/home_page.dart';
-import 'screens/signup_page.dart';
-import 'screens/menu_page.dart';
-import 'screens/genre_page.dart';
+import 'screens/all.dart';
 
 //import 'package:google_fonts/google_fonts.dart';
 
@@ -38,7 +33,9 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/signup': (context) => SignupPage(),
         '/menu': (context) => MenuPage(),
-        '/genres': (context) => GenrePage()
+        '/genres': (context) => GenrePage(),
+        '/movie': (context) => MoviePage(),
+        '/cart': (context) => CartPage(),
       },
       initialRoute: '/home',
     );

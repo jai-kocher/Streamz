@@ -17,7 +17,7 @@ class InputField extends StatelessWidget {
       cursorColor: Colors.white,
       style: TextStyle(
         fontSize: 25,
-        fontFamily: 'Roboto',
+        fontFamily: 'Inter',
         color: Colors.white,
       ),
       obscureText: !showText,

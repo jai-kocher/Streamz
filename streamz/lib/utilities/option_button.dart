@@ -42,7 +42,7 @@ class OptionButton2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        fixedSize: Size(100, 50),
+        fixedSize: Size(110, 50),
         primary: appTextRedColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -12,7 +14,6 @@ class GenreButton extends StatelessWidget {
     return GestureDetector(
       child: Container(
         height: 250,
-        //width: 150,
         margin: EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: col,

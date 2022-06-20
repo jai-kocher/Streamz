@@ -31,3 +31,32 @@ class OptionButton extends StatelessWidget {
     );
   }
 }
+
+class OptionButton2 extends StatelessWidget {
+  const OptionButton2({required this.textData, required this.destination});
+
+  final String textData;
+  final String destination;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        fixedSize: Size(100, 50),
+        primary: appTextRedColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+      ),
+      onPressed: (() {
+        Navigator.pushNamed(context, destination);
+      }),
+      child: Text(
+        textData,
+        style: TextStyle(
+          fontSize: 25,
+        ),
+      ),
+    );
+  }
+}

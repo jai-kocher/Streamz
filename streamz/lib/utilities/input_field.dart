@@ -14,15 +14,16 @@ class InputField extends StatelessWidget {
     return TextField(
       //textCapitalization: TextCapitalization.characters,
       //keyboardType: TextInputType.number,
-      cursorColor: Colors.black,
+      cursorColor: Colors.white,
       style: TextStyle(
         fontSize: 25,
         fontFamily: 'Roboto',
+        color: Colors.white,
       ),
       obscureText: !showText,
       decoration: InputDecoration(
         labelText: typeText,
-        labelStyle: TextStyle(color: Colors.black, fontFamily: 'Bebas Neue'),
+        labelStyle: TextStyle(color: Colors.white, fontFamily: 'Bebas Neue'),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 3,
@@ -33,7 +34,7 @@ class InputField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 3,
-            color: Colors.black,
+            color: Colors.white,
           ),
           borderRadius: BorderRadius.circular(15),
         ),

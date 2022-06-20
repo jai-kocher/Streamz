@@ -1,47 +1,25 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../utilities/constants.dart';
 
-class TestPage extends StatelessWidget {
+class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'STREAMZ',
-          style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
-            color: appTextRedColor,
-          ),
+          style: textStyle2
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                //crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ImageCard(
-                    col: appTextRedColor,
-                    url:
-                        'https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg',
-                  ),
-                  ImageCard(
-                    col: appTextRedColor,
-                    url:
-                        'https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
-                  ),
-                  ImageCard(
-                    col: appTextRedColor,
-                    url:
-                        'https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
-                  ),
-                ],
-              ),
+            Text(
+              'Most Popular',
+              style: textStyle1,
+              //textAlign: TextAlign.left,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -49,22 +27,27 @@ class TestPage extends StatelessWidget {
                 //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ImageCard(
-                    col: appTextRedColor,
                     url:
                         'https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg',
                   ),
                   ImageCard(
-                    col: appTextRedColor,
                     url:
                         'https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
                   ),
                   ImageCard(
-                    col: appTextRedColor,
                     url:
                         'https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Oscar Winning Movies',
+              style: textStyle1,
+              //textAlign: TextAlign.left,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -72,17 +55,42 @@ class TestPage extends StatelessWidget {
                 //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ImageCard(
-                    col: appTextRedColor,
                     url:
                         'https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg',
                   ),
                   ImageCard(
-                    col: appTextRedColor,
                     url:
                         'https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
                   ),
                   ImageCard(
-                    col: appTextRedColor,
+                    url:
+                        'https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Relax',
+              style: textStyle1,
+              //textAlign: TextAlign.left,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                //crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ImageCard(
+                    url:
+                        'https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg',
+                  ),
+                  ImageCard(
+                    url:
+                        'https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
+                  ),
+                  ImageCard(
                     url:
                         'https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
                   ),
@@ -97,17 +105,15 @@ class TestPage extends StatelessWidget {
 }
 
 class ImageCard extends StatelessWidget {
-  ImageCard({required this.col, required this.url});
-  final Color col;
+  ImageCard({required this.url});
   final String url;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 250,
       width: 150,
-      margin: EdgeInsets.all(15),
+      margin: EdgeInsets.fromLTRB(10, 2, 10, 2),
       decoration: BoxDecoration(
-        color: col,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Center(

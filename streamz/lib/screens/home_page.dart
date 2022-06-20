@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:streamz/constants.dart';
-import 'package:streamz/option_button.dart';
+import 'package:streamz/utilities/constants.dart';
+import 'package:streamz/utilities/option_button.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -11,11 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'STREAMZ',
-          style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
-            color: appTextRedColor,
-          ),
+          style: textStyle2,
         ),
       ),
       body: Container(

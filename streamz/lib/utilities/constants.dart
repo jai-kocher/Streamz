@@ -3,3 +3,14 @@
 import 'package:flutter/material.dart';
 
 Color appTextRedColor = Colors.redAccent.shade700;
+
+TextStyle textStyle1 = TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.bold,
+);
+
+TextStyle textStyle2 = TextStyle(
+  fontSize: 40,
+  fontWeight: FontWeight.bold,
+  color: appTextRedColor
+);

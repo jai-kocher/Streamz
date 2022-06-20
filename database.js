@@ -10,7 +10,7 @@
  )
 
  client.connect();
- client.query(`SELECT ACTOR_NAME, ACTOR_ID, ROLE FROM ACTOR INNER JOIN MOVIE_CAST ON ACTOR.ACTOR_ID = MOVIE_CAST.ACTOR_ID`, (err, res) => {
+ client.query(`SELECT * FROM ACTOR_PICTURE WHERE ACTOR_ID = 18`, (err, res) => {
     if(!err){
         console.log(res.rows);
     }

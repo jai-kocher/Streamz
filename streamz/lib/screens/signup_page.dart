@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:streamz/constants.dart';
-import 'input_field.dart';
+import 'package:streamz/utilities/constants.dart';
+import '../utilities/input_field.dart';
+import '../utilities/option_button.dart';
 
 class SignupPage extends StatelessWidget {
   @override
@@ -58,22 +59,10 @@ class SignupPage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  fixedSize: Size(100, 50),
-                  primary: appTextRedColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
-                onPressed: (() {}),
-                child: Text(
-                  'Signup',
-                  style: TextStyle(
-                    fontSize: 25,
-                  ),
-                ),
-              ),
+              OptionButton2(
+                textData: 'SIGNUP',
+                destination: '/genres',
+              )
             ],
           ),
         ),

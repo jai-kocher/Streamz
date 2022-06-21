@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         '/cart': (context) => CartPage(),
         //'/test': (context) => TestPage(),
       },
-      initialRoute: '/genres',
+      initialRoute: '/home',
     );
   }
 }

@@ -6,16 +6,14 @@ import 'constants.dart';
 class InputField extends StatelessWidget {
   final String typeText;
   final bool showText;
+  final Function onC;
   //final Function getValue;
 
-  const InputField(
-      {required this.typeText, required this.showText});
+  const InputField({required this.typeText, required this.showText, required this.onC(value)});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      //textCapitalization: TextCapitalization.characters,
-      //keyboardType: TextInputType.number,
       cursorColor: Colors.white,
       style: TextStyle(
         fontSize: 25,
@@ -41,6 +39,7 @@ class InputField extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
       ),
+      onChanged: onC(),
     );
   }
 }

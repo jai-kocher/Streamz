@@ -10,12 +10,15 @@ TextStyle textStyle1 = TextStyle(
 );
 
 TextStyle textStyle2 = TextStyle(
-  fontSize: 40,
-  fontWeight: FontWeight.bold,
-  color: appTextRedColor
-);
+    fontSize: 40, fontWeight: FontWeight.bold, color: appTextRedColor);
 
 TextStyle textStyle3 = TextStyle(
   fontSize: 17.5,
   fontFamily: 'Roboto',
+);
+
+TextStyle textStyle4 = TextStyle(
+  fontSize: 25,
+  fontFamily: 'Inter',
+  color: Colors.white,
 );

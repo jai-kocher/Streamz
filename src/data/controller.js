@@ -32,6 +32,17 @@ const getActorByID = (req, res) => {
     console.log('Getting Actor!');
 }
 
+const getMemberByUsername = (req, res) => {
+    const username = parseInt(req.params.username);
+    pool.query(queries.getMemberByUsername, [username], (error, results) => {
+        if (error){
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    })
+    console.log('Getting Member!');
+}
+
 const addActor = (req, res) => {
     const {actor_id, actor_name, gender, rating} = req.body;
     pool.query(queries.checkActorExists, [actor_id], (error, results) => {
@@ -51,7 +62,7 @@ const addActor = (req, res) => {
 
 const addMember = (req, res) => {
     const {member_id, member_name, phno, email, username, passwd, balance} = req.body;
-    pool.query(queries.checkMemberExists, [member_id], (error, results) => {
+    pool.query(queries.checkMemberExists, [member_id, username, email], (error, results) => {
         if (results.rows.length){
             res.send('Member ID Already Exists!');
         }
@@ -238,6 +249,7 @@ module.exports = {
     getGenres,
     getGenrePosters,
     addMember,
-    getMembers
+    getMembers,
+    getMemberByUsername
 };
 

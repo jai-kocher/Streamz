@@ -1,13 +1,11 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:streamz/utilities/option_button.dart';
 import '../utilities/constants.dart';
 import '../utilities/image_card.dart';
 import 'package:http/http.dart';
 import 'movie_page.dart';
 import 'dart:convert';
-import 'dart:io';
 
 class MenuPage extends StatefulWidget {
   var genre_id;
@@ -75,9 +73,10 @@ class _MenuPageState extends State<MenuPage> {
                           ),
                           onPressed: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => MoviePage(movie_id: post['movie_id']))
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        MoviePage(movie_id: post['movie_id'])));
                           }),
                     ],
                   )

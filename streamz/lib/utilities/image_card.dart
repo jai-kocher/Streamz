@@ -53,60 +53,10 @@ class LabeledImage extends StatelessWidget {
         Text(
           labelText,
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 30,
           ),
         ),
       ],
-    );
-  }
-}
-
-class ImageButton extends StatelessWidget {
-  const ImageButton(
-      {required this.url,
-      required this.onP,
-      required this.height,
-      required this.width});
-
-  final String url;
-  final double height, width;
-  final Function onP;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: ImageCard(
-        url: url,
-        height: height,
-        width: width,
-      ),
-      onTap: onP(),
-    );
-  }
-}
-
-class LabeledImageButton extends StatelessWidget {
-  const LabeledImageButton(
-      {required this.url,
-      required this.labelText,
-      required this.onP,
-      required this.height,
-      required this.width});
-
-  final String url, labelText;
-  final double height, width;
-  final Function onP;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      child: LabeledImage(
-        url: url,
-        height: height,
-        width: width,
-        labelText: labelText,
-      ),
-      onPressed: onP(),
     );
   }
 }

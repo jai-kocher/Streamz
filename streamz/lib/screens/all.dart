@@ -5,3 +5,4 @@ export 'menu_page.dart';
 export 'genre_page.dart';
 export 'movie_page.dart';
 export 'cart_page.dart';
+export 'test_page.dart';

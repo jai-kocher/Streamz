@@ -1,11 +1,64 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
 import '../utilities/image_card.dart';
 import '../utilities/option_button.dart';
+import 'dart:convert';
+import 'package:http/http.dart';
 
-class MoviePage extends StatelessWidget {
+class MoviePage extends StatefulWidget {
+  var movie_id;
+  MoviePage({Key? key, required this.movie_id}) : super(key: key);
+  @override
+  State<MoviePage> createState() => _MoviePageState();
+}
+
+class _MoviePageState extends State<MoviePage> {
+  var _movie = [];
+  var _movie1 = [];
+  var _movie2 = [];
+  var _movie3 = [];
+  var _movie4 = [];
+  var _movie5 = [];
+  void getData() async {
+    var url = 'http://127.0.0.1:3000/movie/${widget.movie_id}';
+    var url1 = 'http://127.0.0.1:3000/actor/cast/${widget.movie_id}';
+    var url2 = 'http://127.0.0.1:3000/actor/castpicture/${widget.movie_id}';
+    var url3 = 'http://127.0.0.1:3000/movie/directorpicture/${widget.movie_id}';
+    var url4 = 'http://127.0.0.1:3000/movie/director/${widget.movie_id}';
+    var url5 = 'http://127.0.0.1:3000/movie/poster/${widget.movie_id}';
+    try {
+      final response = await get(Uri.parse(url));
+      final data = jsonDecode(response.body);
+      final response1 = await get(Uri.parse(url1));
+      final data1 = jsonDecode(response1.body);
+      final response2 = await get(Uri.parse(url2));
+      final data2 = jsonDecode(response2.body);
+      final response3 = await get(Uri.parse(url3));
+      final data3 = jsonDecode(response3.body);
+      final response4 = await get(Uri.parse(url4));
+      final data4 = jsonDecode(response4.body);
+      final response5 = await get(Uri.parse(url5));
+      final data5 = jsonDecode(response5.body);
+      setState(() {
+        _movie = data;
+        _movie1 = data1;
+        _movie2 = data2;
+        _movie3 = data3;
+        _movie4 = data4;
+        _movie5 = data5;
+      });
+    } catch (err) {}
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    print(widget.movie_id);
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,22 +74,24 @@ class MoviePage extends StatelessWidget {
             children: [
               SizedBox(width: double.infinity),
               ImageCard(
-                url:
-                    'https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg',
+                url: _movie5[0]['url'],
                 height: 300,
                 width: 200,
               ),
               SizedBox(height: 10),
-              Text(
-                'AVATAR',
-                style: textStyle2.copyWith(color: Colors.white),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  _movie[0]['movie_name'],
+                  style: textStyle2.copyWith(color: Colors.white),
+                ),
               ),
               Text(
-                '2009, 20TH CENTURY FOX',
+                '${_movie[0]['movie_year']}, ${_movie[0]['studio']}',
                 style: textStyle1,
               ),
               Text(
-                'ENGLISH',
+                _movie[0]['lang'],
                 style: textStyle1,
               ),
               SizedBox(height: 10),
@@ -44,7 +99,7 @@ class MoviePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '7.8',
+                    _movie[0]['rating'].toString(),
                     style: textStyle1,
                   ),
                   Icon(
@@ -66,9 +121,13 @@ class MoviePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  OptionButton2(textData: 'BUY ₹600', destination: '/cart'),
+                  OptionButton2(
+                      textData: 'BUY ₹${_movie[0]['buy_cost']}',
+                      destination: '/cart'),
                   SizedBox(width: 20),
-                  OptionButton2(textData: 'RENT ₹50', destination: '/cart'),
+                  OptionButton2(
+                      textData: 'RENT ₹${_movie[0]['rent_cost']}',
+                      destination: '/cart'),
                 ],
               ),
               SizedBox(height: 15),
@@ -82,7 +141,7 @@ class MoviePage extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  'Jake, who is paraplegic, replaces his twin on the Na\'vi inhabited Pandora for a corporate mission. After the natives accept him as one of their own, he must decide where his loyalties lie.',
+                  _movie[0]['synopsis'],
                   style: textStyle3,
                 ),
               ),
@@ -101,25 +160,17 @@ class MoviePage extends StatelessWidget {
                   child: Row(
                     children: [
                       LabeledImage(
-                        url:
-                            'https://upload.wikimedia.org/wikipedia/commons/6/6c/Sam_Worthington_2013.jpg',
+                        url: _movie2[0]['url'],
                         height: 200,
                         width: 133,
-                        labelText: 'Sam Worthington',
+                        labelText: _movie1[0]['actor_name'],
                       ),
                       LabeledImage(
-                        url:
-                            'https://cdn.britannica.com/17/215017-050-0E006005/American-actress-Zoe-Saldana-2018.jpg',
+                        url: _movie2[1]['url'],
                         height: 200,
                         width: 133,
-                        labelText: 'Zoe Saldana',
+                        labelText: _movie1[1]['actor_name'],
                       ),
-                      // ImageCard(
-                      //   url:
-                      //       'https://upload.wikimedia.org/wikipedia/commons/6/6c/Sam_Worthington_2013.jpg',
-                      //   height: 200,
-                      //   width: 133,
-                      // ),
                     ],
                   ),
                 ),
@@ -135,11 +186,10 @@ class MoviePage extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: LabeledImage(
-                  url:
-                      'https://upload.wikimedia.org/wikipedia/commons/f/fe/James_Cameron_by_Gage_Skidmore.jpg',
+                  url: _movie3[0]['url'],
                   height: 200,
                   width: 133,
-                  labelText: 'James Cameron',
+                  labelText: _movie4[0]['director_name'],
                 ),
               ),
             ],

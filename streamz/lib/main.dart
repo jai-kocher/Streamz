@@ -32,12 +32,13 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/login': (context) => LoginPage(),
         '/signup': (context) => SignupPage(),
-        '/menu': (context) => MenuPage(),
+        //'/menu': (context) => MenuPage(),
         '/genres': (context) => GenrePage(),
-        '/movie': (context) => MoviePage(),
+        //'/movie': (context) => MoviePage(),
         '/cart': (context) => CartPage(),
+        //'/test': (context) => TestPage(),
       },
-      initialRoute: '/home',
+      initialRoute: '/genres',
     );
   }
 }

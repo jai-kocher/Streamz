@@ -5,7 +5,39 @@ import 'package:streamz/utilities/constants.dart';
 import '../utilities/input_field.dart';
 import '../utilities/option_button.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupDetails {
+  SignupDetails(
+      {required this.pno,
+      required this.email,
+      required this.username,
+      required this.password});
+
+  String username, password, email;
+  double pno;
+
+  void setUsername(uname) {
+    username = uname;
+  }
+
+  void setPassword(passwd) {
+    password = passwd;
+  }
+
+  void setPNO(pn) {
+    pno = pn;
+  }
+
+  void setEmail(em) {
+    email = em;
+  }
+}
+
+class SignupPage extends StatefulWidget {
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,31 +63,31 @@ class SignupPage extends StatelessWidget {
                   fontSize: 40,
                 ),
               ),
-              InputField(
-                typeText: 'EMAIL',
-                showText: true,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              InputField(
-                typeText: 'Phone Number',
-                showText: true,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              InputField(
-                typeText: 'Username',
-                showText: true,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              InputField(
-                typeText: 'Password',
-                showText: false,
-              ),
+              // InputField(
+              //   typeText: 'EMAIL',
+              //   showText: true,
+              // ),
+              // SizedBox(
+              //   height: 10,
+              // ),
+              // InputField(
+              //   typeText: 'Phone Number',
+              //   showText: true,
+              // ),
+              // SizedBox(
+              //   height: 10,
+              // ),
+              // InputField(
+              //   typeText: 'Username',
+              //   showText: true,
+              // ),
+              // SizedBox(
+              //   height: 10,
+              // ),
+              // InputField(
+              //   typeText: 'Password',
+              //   showText: false,
+              // ),
               SizedBox(
                 height: 10,
               ),

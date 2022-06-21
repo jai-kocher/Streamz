@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class GenreButton extends StatelessWidget {
-  GenreButton(
-      {required this.col, required this.genre, required this.destination});
+  GenreButton({
+    required this.col,
+    required this.genre,
+    required this.onP,
+  });
   final Color col;
   final String genre;
-  final String destination;
+  final Function onP;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,12 +25,14 @@ class GenreButton extends StatelessWidget {
         child: Center(
           child: Text(
             genre,
-            style: textStyle1,
+            style: textStyle1.copyWith(
+              fontSize: 40,
+            ),
           ),
         ),
       ),
       onTap: () {
-        Navigator.pushNamed(context, destination);
+        onP();
       },
     );
   }

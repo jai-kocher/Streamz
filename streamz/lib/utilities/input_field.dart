@@ -6,8 +6,10 @@ import 'constants.dart';
 class InputField extends StatelessWidget {
   final String typeText;
   final bool showText;
+  //final Function getValue;
 
-  const InputField({required this.typeText, required this.showText});
+  const InputField(
+      {required this.typeText, required this.showText});
 
   @override
   Widget build(BuildContext context) {
